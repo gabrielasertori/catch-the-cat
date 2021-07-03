@@ -4,10 +4,26 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="reset.css">
     <link rel="stylesheet" href="style.css">
     <title>Catch the Cat!</title>
 </head>
 <body>
+    <div id="border" class="border">
+        <div class="infobox">
+            <h1 class="title">Catch the cat!</h1>
+            <p class="subtitle">Can you find me?</p>
+            <img src="img/cat3-edited2.png" alt="" class="infocat">
+            <h2 class="instructions">Instruções</h2>
+            <ol class="list">
+                <li>O gato está escondido em algum lugar na página</li>
+                <li>Clique com o botão esquerdo do mouse para saber se está perto ou longe dele</li>
+                <li>Continue clicando até encontrá-lo</li>
+            </ol>
+            <button id="continue" class="continue" onClick="start()">Começar</button>
+        </div>
+    </div>
+
     <img src="img/cat3-edited2.png" alt="Gato" id="cat" class="cat">
 
     <script src="script.js"></script>
