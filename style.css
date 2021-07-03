@@ -1,12 +1,22 @@
 @import url('https://fonts.googleapis.com/css2?family=Nunito:wght@300;600&display=swap');
 
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
 body {
+    height: 100vh;
     font-family: 'Nunito', sans-serif;
 }
 
 .cat {
     opacity: 0;
 }
+
 
 .border {
     background: #FEAC5E;  /* fallback for old browsers */
