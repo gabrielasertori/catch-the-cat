@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@300;600&display=swap');
+
 *,
 *::before,
 *::after {
@@ -8,8 +10,75 @@
 
 body {
     height: 100vh;
+    font-family: 'Nunito', sans-serif;
 }
 
 .cat {
     opacity: 0;
+}
+
+
+.border {
+    background: #FEAC5E;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #4BC0C8, #C779D0, #FEAC5E);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #4BC0C8, #C779D0, #FEAC5E); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    border-radius: 8px;
+    box-shadow: 0 0 5px rgba(50,50,50,0.3);
+    padding: 5px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 50%;
+}
+
+.infobox {
+    background-color: #fff;
+    border-radius: 8px;
+    padding: 12px;
+    text-align: center;
+}
+
+.title {
+    font-weight: 600;
+    font-size: 1.5rem;
+}
+
+.subtitle {
+    line-height: 1.7rem;
+}
+
+.infocat {
+    margin: 1rem;
+}
+
+.instructions {
+    font-weight: 600;
+    font-size: 1.125rem;
+}
+
+.list {
+    margin: 10px;
+}
+
+.list li {
+    line-height: 26px;
+}
+
+.continue {
+    background: #FEAC5E;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #4BC0C8, #C779D0, #FEAC5E);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #4BC0C8, #C779D0, #FEAC5E); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    border-radius: 8px;
+    border: none;
+    color: #fff;
+    font-weight: 600;
+    letter-spacing: 1px;
+    margin: 10px;
+    padding: 16px;
+    text-transform: lowercase;
+}
+
+.continue:hover{
+    cursor: pointer;
 }

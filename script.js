@@ -30,14 +30,34 @@ window.addEventListener('click', (e) => {
         return;
     }
     
-    if (clickX - catXNumber < 175 
+    if (clickX - catXNumber < 125 
+        && clickX - catXNumber > -50 
+        && clickY - catYNumber < 125 
+        && clickY - catYNumber > -50) {
+        state = 'queimando'
+
+    } else if (clickX - catXNumber < 175 
         && clickX - catXNumber > -100 
         && clickY - catYNumber < 175 
         && clickY - catYNumber > -100) {
-        state = 'quente';
+        state = 'quente'
+
+    } else if (clickX - catXNumber < 275 
+        && clickX - catXNumber > -200 
+        && clickY - catYNumber < 275 
+        && clickY - catYNumber > -200){
+        state = 'morno'
+        
+    } else if (clickX - catXNumber < 575 
+        && clickX - catXNumber > -500 
+        && clickY - catYNumber < 575 
+        && clickY - catYNumber > -500){
+        state = 'frio'
+
     } else {
-        state = 'frio';
+        state = 'congelando'
     }
+    
 
     printMessage(e.x, e.y, state);
 });
@@ -55,6 +75,7 @@ function printMessage(x, y, state) {
         message.style.transform = `translate(${x - 84}px, ${y - 10}px)`;
     }
 
+  
     message.style.position = 'absolute';
     document.body.appendChild(message);
 
@@ -63,3 +84,15 @@ function printMessage(x, y, state) {
         message.remove();
     }, 300);
 }
+
+function start() {
+    const border = document.getElementById("border");
+    border.style.display = "none";
+}
+
+//congelando: 500px
+//frio: 500px a 200px
+//morno: 200px a 100px
+//quente: 100px a 50px
+//queimando: 50px
+
