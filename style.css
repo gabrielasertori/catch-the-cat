@@ -8,6 +8,13 @@
     padding: 0;
 }
 
+:root {
+    --termometer-height: .5rem;
+    --termometer-background-color: rgba(245, 245, 245, 0.39);
+}
+
+
+
 body {
     height: 100vh;
     font-family: 'Nunito', sans-serif;
@@ -82,3 +89,69 @@ body {
 .continue:hover{
     cursor: pointer;
 }
+
+.message{
+    font-weight: 600;
+    font-size: 5rem;
+    z-index: 10;
+}
+
+.btnRestart{
+    font-weight: 600;
+    font-size: 1.2rem;
+    position: absolute;
+    top: 60%;
+    left: 50%;
+    transform: translate(-50%);
+    color: white;
+    padding: .5rem;
+    background-color: rgb(47, 158, 32);
+    border: none;
+    border-radius: 1rem;
+    cursor: pointer;
+    box-shadow: 0 0 .5rem rgb(47, 158, 32) ;
+}
+
+.time{
+    font-size: 2rem;
+    display: flex;
+    margin: 1rem;
+}
+
+#result{
+    position: absolute;
+    font-weight: 600;
+    font-size: 2rem;
+    top: 50%;
+    left: 50%;
+
+}
+
+.termometer{
+    opacity: 0;
+    margin: 2rem;
+    margin-left: 1rem;
+    margin-top: 10rem;
+    position: absolute;
+    width: 1.2rem;
+    height: 25rem;
+    background-color: rgba(233, 233, 233, 0.322);
+    border: .2rem solid #000;
+    border-radius: 2rem;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    transition: opacity 1s;
+}
+
+.termometer-inside{
+    width: .5rem;
+    height: var(--termometer-height);
+    margin-bottom: .2rem;
+    background-color: var(--termometer-background-color);
+    border: .2rem solid #000;
+    border-radius: 2rem;
+    transition: height 1s;
+}
+
+

@@ -1,5 +1,9 @@
 'use strict'
 
+
+var intervalo;
+
+
 function hideCat () {
     const cat = document.getElementById('cat');
     const x = parseInt(Math.random()*1000);
@@ -27,7 +31,19 @@ window.addEventListener('click', (e) => {
 
     if (click == cat) {
         cat.style.opacity = '1';
-        return;
+        cronometerStop();
+        let minute = document.querySelector('#minute').textContent;
+        let second = document.querySelector('#second').textContent;
+        let milisecond = document.querySelector('#milisecond').textContent;
+        let message = document.querySelector('#result')
+
+        message.innerHTML = `Muito bem, você achou o gato em ${minute}${second}${milisecond}!!!`;
+        document.querySelector('.btnRestart').hidden = false;
+
+        message.style.cssText = `
+        transform: translate(-50%, -50%);
+        transition: transform 2s;
+        `
     }
     
     if (clickX - catXNumber < 125 
@@ -68,11 +84,57 @@ function printMessage(x, y, state) {
     const message = document.createElement('span');
     
     if (state === 'quente') {
-        message.textContent = 'Quente';
-        message.style.transform = `translate(${x - 110}px, ${y - 10}px)`;
-    } else {
-        message.textContent = 'Frio';
-        message.style.transform = `translate(${x - 84}px, ${y - 10}px)`;
+        document.querySelector('body').style.cssText = `
+        background-color: #FEA82F;
+        transition: background-color .8s`
+        document.querySelector(':root').style.cssText = `
+        --termometer-height: 18rem;
+        --termometer-background-color: rgba(252, 91, 11, 0.651);
+        `
+        // message.textContent = 'Quente';
+        // message.style.transform = `translate(${x - 110}px, ${y - 10}px)`;
+            } else if (state === 'queimando') {
+        document.querySelector('body').style.cssText = `
+        background-color: #FF6701;
+        transition: background-color .8s`
+        document.querySelector(':root').style.cssText = `
+        --termometer-height: 24.2rem;
+        --termometer-background-color: rgb(255, 85, 6);
+        `
+        // message.textContent = 'Queimando';
+        // message.style.transform = `translate(${x - 110}px, ${y - 10}px)`;
+    } else if (state === 'morno') {
+        document.querySelector('body').style.cssText = `
+        background-color: #FFC288;
+        transition: background-color .8s`
+        document.querySelector(':root').style.cssText = `
+        --termometer-height: 13rem;
+        --termometer-background-color: rgba(202, 149, 5, 0.76);
+        `
+        // message.textContent = 'Morno';
+        // message.style.transform = `translate(${x - 110}px, ${y - 10}px)`;
+    } else if (state === 'frio') {
+        document.querySelector('body').style.cssText = `
+        background-color: #77ACF1;
+        transition: background-color .8s`
+        document.querySelector(':root').style.cssText = `
+        --termometer-height: 8rem;
+        --termometer-background-color: rgba(110, 208, 238, 0.76);
+        `
+
+        // message.textContent = 'Frio';
+        // message.style.transform = `translate(${x - 110}px, ${y - 10}px)`;
+    }  else {
+        document.querySelector('body').style.cssText = `
+        background-color: #3EDBF0;
+        transition: background-color .8s`
+        document.querySelector(':root').style.cssText = `
+        --termometer-height: 2rem;
+        --termometer-background-color: rgb(62, 202, 245);
+        `
+
+        // message.textContent = 'Congelando';
+        // message.style.transform = `translate(${x - 84}px, ${y - 10}px)`;
     }
 
   
@@ -88,6 +150,8 @@ function printMessage(x, y, state) {
 function start() {
     const border = document.getElementById("border");
     border.style.display = "none";
+    document.querySelector('.termometer').style.opacity= '1';
+    cronometerStart ();
 }
 
 //congelando: 500px
@@ -96,3 +160,30 @@ function start() {
 //quente: 100px a 50px
 //queimando: 50px
 
+
+
+
+function cronometerStop() {
+    window.clearInterval(intervalo);
+}
+
+
+function cronometerStart (){
+
+    let milisecond = 1;
+    let second = 0;
+    let minute = 0;
+    intervalo = window.setInterval(function() {
+        if (milisecond === 60) { second++; milisecond = 0; }
+        if (second === 60) { minute++; s = 0; second = 0; }
+        if (minute < 10) document.getElementById("minute").innerHTML = "0" + minute + ":"; else document.getElementById("minute").innerHTML = minute + ":";
+        if (milisecond < 10) document.getElementById("milisecond").innerHTML = "0" + milisecond; else document.getElementById("milisecond").innerHTML = milisecond;
+        if (second < 10) document.getElementById("second").innerHTML = "0" + second + ":"; else document.getElementById("second").innerHTML = second + ":";		
+        milisecond++;
+    },16.666);
+}
+
+
+function restart(){
+    location.reload();
+}
