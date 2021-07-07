@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -8,6 +9,7 @@
     <link rel="stylesheet" href="style.css">
     <title>Catch the Cat!</title>
 </head>
+
 <body>
     <div id="border" class="border">
         <div class="infobox">
@@ -23,9 +25,21 @@
             <button id="continue" class="continue" onClick="start()">Começar</button>
         </div>
     </div>
+    <div class="termometer">
+        <div class="termometer-inside"></div>
+    </div>
+    <h1 id='result'></h1>
 
-    <img src="img/cat3-edited2.png" alt="Gato" id="cat" class="cat">
+    <div class='time'>
+        <h2 id='minute'></h2>
+        <h2 id='second'></h2>
+        <h2 id='milisecond'></h2>
+    </div> 
+    <button class="btnRestart" onclick="restart()" hidden>Restart</button>
 
-    <script src="script.js"></script>
+        <img src="img/cat3-edited2_edited.png" alt="Gato" id="cat" class="cat">
+
+        <script src="script.js"></script>
 </body>
+
 </html>
