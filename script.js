@@ -98,7 +98,7 @@ function printMessage(x, y, state) {
         background-color: #FF6701;
         transition: background-color .8s`
         document.querySelector(':root').style.cssText = `
-        --termometer-height: 24.2rem;
+        --termometer-height: 23.2rem;
         --termometer-background-color: rgb(255, 85, 6);
         `
         // message.textContent = 'Queimando';
@@ -175,7 +175,7 @@ function cronometerStart (){
     let minute = 0;
     intervalo = window.setInterval(function() {
         if (milisecond === 60) { second++; milisecond = 0; }
-        if (second === 60) { minute++; s = 0; second = 0; }
+        if (second === 60) { minute++; second= 0; milisecond = 0; }
         if (minute < 10) document.getElementById("minute").innerHTML = "0" + minute + ":"; else document.getElementById("minute").innerHTML = minute + ":";
         if (milisecond < 10) document.getElementById("milisecond").innerHTML = "0" + milisecond; else document.getElementById("milisecond").innerHTML = milisecond;
         if (second < 10) document.getElementById("second").innerHTML = "0" + second + ":"; else document.getElementById("second").innerHTML = second + ":";		
