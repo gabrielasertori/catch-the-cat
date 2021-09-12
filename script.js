@@ -1,5 +1,10 @@
 'use strict'
 
+function start() {
+	const border = document.getElementById("border");
+	border.style.display = "none";
+}
+
 function hideCat () {
 	const cat = document.getElementById('cat');
 	const x = parseInt(Math.random()*1000);
@@ -16,6 +21,7 @@ window.addEventListener('click', (e) => {
 
 	if (click == cat) {
 		cat.style.opacity = '1';
+		restart();
 		return;
 	}
 	if (locale[0] < 175 && locale[0] > -100
@@ -62,7 +68,7 @@ function printMessage(x, y, state) {
 	}, 400);
 }
 
-function start() {
-	const border = document.getElementById("border");
-	border.style.display = "none";
+function restart() {
+	const button = document.getElementById("restart");
+	button.style.visibility = "visible";
 }
