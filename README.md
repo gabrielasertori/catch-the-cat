@@ -1,13 +1,20 @@
-# Catch-the-cat
-Can you catch the cat? Simple game made with javascript
+# Catch the cat
 
-<div>
-  <img src="https://img.shields.io/badge/MADE WITH-JAVASCRIPT-yellow&?style=for-the-badge&color=yellow">
+
+<div align="center">
+  <p>Can you catch the cat? Simple game made with javascript</p>
+  <br>
+  <span>
+    <img src="https://img.shields.io/badge/MADE WITH-JAVASCRIPT-yellow&?style=for-the-badge&color=yellow">
+    <img src="https://img.shields.io/badge/VERSION-BETA-yellow&?style=for-the-badge&color=green">
+  </span>
+  <div>
+    <img src="/misc/intro.png">
+  </div>
 </div>
 
-Beta version
 
-![intro](/readme/intro.png)
+
 
 
 ## 🐱 How it works
